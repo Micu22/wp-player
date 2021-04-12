@@ -21,7 +21,7 @@ define( 'BIIIRD_ENV_DEV', true );
 add_action( 'wp_enqueue_scripts', 'wpplayer_enqueue' );
 
 function wpplayer_enqueue() {
-	$version = ( BIIIRD_ENV_DEV === true ) ? time() : BIIIRD_THEME_VERSION;
+	$version = ( BIIIRD_ENV_DEV === true ) ? time() : BIIIRD_PLAYER_VERSION;
 	if ( is_singular() && false !== strpos( get_queried_object()->post_content, '<!-- wp:audio' ) ) {
 		wp_enqueue_script( 'wp-player', BIIIRD_PLAYER_URL . 'assets/js/wp-player.js', [], $version, true );
 	}
